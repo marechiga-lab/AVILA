@@ -5,97 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infografía - Dictamen Fideicomiso Avila</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-bg: #0B3D66;
             --card-bg: #ffffff;
-            --text-main: #0B3D66;
-            --text-secondary: #013968;
+            --text-main: #1f2937; 
+            --text-secondary: #4b5563; 
+            --brand-blue: #0B3D66;
             --accent: #8FA6BA;
             --accent-dark: #831419;
             --light-blue: #CCDCE3;
             --white: #ffffff;
+            --footer-dark: #072a46;
         }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--primary-bg);
             color: var(--white);
+            background-image: radial-gradient(circle at top right, rgba(204, 220, 227, 0.1) 0%, transparent 40%);
         }
         .card {
             background: var(--card-bg);
-            border: 1px solid rgba(143, 166, 186, 0.4);
+            border: 1px solid rgba(143, 166, 186, 0.2);
             border-radius: 12px;
-            transition: all 0.2s;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
             color: var(--text-main);
         }
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
         }
         .accent-bar {
             height: 4px;
-            background: linear-gradient(90deg, var(--white), var(--accent));
+            background: linear-gradient(90deg, var(--accent), var(--light-blue));
             border-radius: 2px;
         }
         .status-alert {
             background-color: var(--white);
             border-left: 6px solid var(--accent-dark);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
             color: var(--text-main);
         }
         .icon-circle {
-            background-color: var(--text-main);
+            background-color: var(--brand-blue);
             color: var(--white);
         }
         .disclaimer-box {
-            background-color: var(--white);
-            border: 1px dashed var(--text-main);
-            color: var(--text-secondary);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light-blue);
+            backdrop-filter: blur(4px);
         }
         .amount-highlight {
+            background-color: #f3f4f6;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        th {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 2px solid var(--light-blue);
+            color: var(--brand-blue);
+            font-weight: 700;
+        }
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .total-row {
+            font-weight: 800;
             background-color: #f8fafc;
-            border: 1px solid rgba(11, 61, 102, 0.1);
         }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body class="p-4 md:p-10">
     <div class="max-w-5xl mx-auto">
         <!-- Header -->
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-extrabold mb-2 tracking-tight uppercase" style="color: var(--white);">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold mb-2 uppercase tracking-tight" style="color: var(--white);">
                 Dictamen Técnico Legal
             </h1>
-            <p class="text-xl font-semibold opacity-90 mb-4" style="color: var(--light-blue);">Estructura Fideicomiso Avila - Enero 2026</p>
-            <div class="accent-bar w-32 mx-auto mb-6"></div>
+            <p class="text-xl font-semibold opacity-80 mb-6" style="color: var(--light-blue);">Estructura Fideicomiso Avila - Zapopan, Jalisco</p>
+            <div class="accent-bar w-32 mx-auto mb-8"></div>
             
             <!-- Disclaimer -->
-            <div class="w-full p-4 rounded-lg disclaimer-box text-xs md:text-sm italic mb-6">
-                <strong style="color: var(--accent-dark);">AVISO IMPORTANTE:</strong> El presente documento constituye únicamente un resumen gráfico con fines informativos. No sustituye ni reemplaza la lectura, análisis y revisión detallada del <strong>Dictamen Técnico Legal completo</strong>. Se recomienda su consulta integral para la toma de decisiones.
+            <div class="w-full p-4 rounded-lg disclaimer-box text-xs md:text-sm italic mb-10 text-center">
+                <strong style="color: var(--white);">AVISO IMPORTANTE:</strong> El presente documento constituye únicamente un resumen gráfico con fines informativos. No sustituye ni reemplaza la lectura detallada del <strong>Dictamen Técnico Legal completo</strong>.
             </div>
         </header>
 
         <!-- Main Info Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <!-- Col 1: Generalidades -->
+            <!-- OE1 -->
             <div class="card p-6">
                 <div class="flex items-center mb-4">
                     <div class="w-10 h-10 flex items-center justify-center rounded-full icon-circle mr-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12 a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12 a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                     </div>
                     <h2 class="text-xl font-bold uppercase">OE1: Generalidades</h2>
                 </div>
                 <ul class="space-y-3 text-sm" style="color: var(--text-secondary);">
-                    <li><strong style="color: var(--text-main);">Contrato:</strong> INVEX/4073 (20 dic 2019).</li>
-                    <li><strong style="color: var(--text-main);">Ubicación:</strong> Zapopan, Jalisco (Av. Manuel Ávila Camacho).</li>
-                    <li><strong style="color: var(--text-main);">Superficie:</strong> 5,040.69 m².</li>
-                    <li><strong style="color: var(--text-main);">Partes:</strong> Fideicomitentes A (Aportantes), Fideicomitente B (Desarrollador) y Fiduciario (Invex).</li>
+                    <li><strong style="color: var(--brand-blue);">Contrato:</strong> INVEX/4073 (20 dic 2019).</li>
+                    <li><strong style="color: var(--brand-blue);">Ubicación:</strong> Zapopan, Jalisco (Av. Manuel Ávila Camacho).</li>
+                    <li><strong style="color: var(--brand-blue);">Superficie:</strong> 5,040.69 m² de terreno urbano.</li>
+                    <li><strong style="color: var(--brand-blue);">Estatus:</strong> Vigente y con garantía hipotecaria activa.</li>
                 </ul>
             </div>
 
-            <!-- Col 2: Contraprestaciones -->
+            <!-- OE2 -->
             <div class="card p-6">
                 <div class="flex items-center mb-4">
                     <div class="w-10 h-10 flex items-center justify-center rounded-full icon-circle mr-3">
@@ -104,18 +126,58 @@
                     <h2 class="text-xl font-bold uppercase">OE2: Beneficios Económicos</h2>
                 </div>
                 <div class="p-4 rounded-lg mb-2 amount-highlight">
-                    <p class="text-2xl font-bold" style="color: var(--text-main);">$182,000,000.00 MXN</p>
-                    <p class="text-xs uppercase font-semibold opacity-70">Monto mínimo garantizado (Fideicomitente A)</p>
+                    <p class="text-2xl font-extrabold" style="color: var(--brand-blue);">$182,000,000.00 MXN</p>
+                    <p class="text-xs uppercase font-semibold opacity-70">Monto mínimo garantizado (Aportantes)</p>
                 </div>
                 <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
                     <li><span class="font-bold">17.00%</span> del monto de inversión total.</li>
-                    <li><span class="font-bold">$20M MXN</span> de depósito en garantía (entregado).</li>
-                    <li>Derecho a <span class="font-bold">pago en especie</span> (unidades a valor comercial).</li>
+                    <li><span class="font-bold">$20M MXN</span> de depósito en garantía entregado.</li>
+                    <li>Opción de <span class="font-bold">pago en especie</span> (unidades privativas).</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Alert Section: OE3 Incumplimientos -->
+        <!-- Distribución Final Parte A (Nueva Tarjeta) -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 flex items-center justify-center rounded-full icon-circle mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h2 class="text-xl font-bold uppercase">Distribución de Derechos (Parte A)</h2>
+            </div>
+            <p class="text-sm mb-6" style="color: var(--text-secondary);">
+                Distribución final según la <strong>Cláusula Tercera de la Escritura Pública 26,095</strong>, tras la consolidación de derechos de la "Parte A".
+            </p>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nombre del Fideicomisario</th>
+                            <th>Participación Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>María de Guadalupe Ugarte Basave</td><td>16.65%</td></tr>
+                        <tr><td>2</td><td>Carlos Eduardo Villa Herrejón</td><td>16.65%</td></tr>
+                        <tr><td>3</td><td>María de Guadalupe Villa Ugarte</td><td>13.32%</td></tr>
+                        <tr><td>4</td><td>María del Carmen Villa Ugarte</td><td>13.32%</td></tr>
+                        <tr><td>5</td><td>Carlos Villa Ugarte</td><td>13.32%</td></tr>
+                        <tr><td>6</td><td>María del Pilar Villa Ugarte</td><td>13.37%</td></tr>
+                        <tr><td>7</td><td>José Villa Ugarte</td><td>13.37%</td></tr>
+                        <tr class="total-row">
+                            <td colspan="2" class="text-right">TOTAL</td>
+                            <td>100.00%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 p-3 bg-slate-50 border border-slate-100 rounded text-xs italic" style="color: var(--text-secondary);">
+                <strong>Nota:</strong> Los señores Diego González Rul Villa, Rafael González Rul Villa, Carmen Lucía Calderón Villa, Paloma Calderón Villa, Rocío Calderón Villa, Anamaría Calderón Villa, Estela Villa Ituarte y Carlos Villa Ituarte dejaron de formar parte del Fideicomiso al haber donado la totalidad de sus derechos.
+            </div>
+        </div>
+
+        <!-- Alerta Incumplimientos -->
         <div class="card p-8 mb-8 status-alert">
             <div class="flex items-start">
                 <div class="w-12 h-12 flex items-center justify-center rounded-full text-white mr-4 shrink-0 shadow-lg" style="background-color: var(--accent-dark);">
@@ -125,100 +187,100 @@
                     <h2 class="text-xl font-bold mb-3 uppercase" style="color: var(--accent-dark);">OE3: Incumplimientos detectados</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <p class="text-sm font-semibold mb-1" style="color: var(--text-main);">Licencias de Construcción:</p>
-                            <p class="text-sm" style="color: var(--text-secondary);">Fecha límite: <span class="font-bold underline" style="color: var(--accent-dark);">18 de diciembre de 2023</span>. No se ha acreditado el cumplimiento ante el municipio.</p>
+                            <p class="text-sm font-semibold mb-1" style="color: var(--brand-blue);">Licencias de Construcción:</p>
+                            <p class="text-sm" style="color: var(--text-secondary);">Vencimiento: <span class="font-bold underline" style="color: var(--accent-dark);">18 de diciembre de 2023</span>. No se pudo comprobar la obtención ni vigencia actual de la licencia.</p>
                         </div>
                         <div>
-                            <p class="text-sm font-semibold mb-1" style="color: var(--text-main);">Transparencia y Cuentas:</p>
-                            <p class="text-sm" style="color: var(--text-secondary);">Falta de minutas mensuales para informar sobre ingresos brutos derivados de preventas.</p>
+                            <p class="text-sm font-semibold mb-1" style="color: var(--brand-blue);">Rendición de Cuentas:</p>
+                            <p class="text-sm" style="color: var(--text-secondary);">Falta de minutas mensuales sobre ingresos brutos derivados de preventas.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Financial & Credit -->
+        <!-- Financiamiento & Participación -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div class="md:col-span-2 card p-6 flex flex-col justify-center">
-                <h3 class="text-lg font-bold mb-4 flex items-center" style="color: var(--text-main);">
-                    <svg class="mr-2" style="color: var(--text-secondary);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M3 7v1a3 3 0 0 0 6 0V7"></path><path d="M9 7v1a3 3 0 0 0 6 0V7"></path><path d="M15 7v1a3 3 0 0 0 6 0V7"></path><path d="M19 21V11"></path><path d="M5 21V11"></path></svg>
-                    Financiamiento (Crédito Santander)
+                <h3 class="text-lg font-bold mb-4 flex items-center uppercase" style="color: var(--brand-blue);">
+                    Financiamiento (Banco Santander)
                 </h3>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="border-l-2 pl-4" style="border-color: var(--text-main);">
-                        <p class="text-xs opacity-60 uppercase">Monto de Línea</p>
-                        <p class="text-lg font-bold" style="color: var(--text-main);">$202.8M MXN</p>
+                    <div class="border-l-4 pl-4" style="border-color: var(--accent);">
+                        <p class="text-xs opacity-60 uppercase font-bold">Monto Autorizado</p>
+                        <p class="text-xl font-extrabold">$202.8M MXN</p>
                     </div>
-                    <div class="border-l-2 pl-4" style="border-color: var(--text-main);">
-                        <p class="text-xs opacity-60 uppercase">Vencimiento</p>
-                        <p class="text-lg font-bold" style="color: var(--text-main);">Abril 2027</p>
+                    <div class="border-l-4 pl-4" style="border-color: var(--accent);">
+                        <p class="text-xs opacity-60 uppercase font-bold">Vencimiento</p>
+                        <p class="text-xl font-extrabold">Abril 2027</p>
                     </div>
                 </div>
-                <p class="text-xs mt-4 italic opacity-60">* Obligación de resolver gravamen ante proceso de reversión.</p>
+                <p class="text-xs mt-4 italic opacity-60">* Es necesario auditar el saldo de las ministraciones ejercidas.</p>
             </div>
             
-            <!-- Tarjeta Participación del Proyecto -->
-            <div class="card p-6 flex flex-col justify-center border-none" style="background-color: var(--light-blue); color: var(--text-main);">
-                <h3 class="font-bold mb-4 uppercase text-xs text-center" style="color: var(--text-secondary);">Participación del Proyecto</h3>
+            <div class="card p-6 flex flex-col justify-center border-none shadow-xl" style="background-color: var(--light-blue); color: var(--brand-blue);">
+                <h3 class="font-bold mb-4 uppercase text-xs text-center tracking-widest">Distribución del Proyecto</h3>
                 <div class="space-y-6">
                     <div>
                         <div class="flex items-end justify-between mb-2">
-                            <span class="text-xs opacity-80">Fideicomitente A</span>
-                            <span class="text-xl font-bold">17%</span>
+                            <span class="text-xs font-bold uppercase">Aportantes (A)</span>
+                            <span class="text-xl font-extrabold">17%</span>
                         </div>
-                        <div class="w-full bg-white/40 h-2 rounded-full overflow-hidden">
-                            <div class="h-full rounded-full" style="width: 17%; background-color: var(--text-main);"></div>
+                        <div class="w-full bg-white/50 h-2 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full" style="width: 17%; background-color: var(--brand-blue);"></div>
                         </div>
                     </div>
                     <div>
                         <div class="flex items-end justify-between mb-2">
-                            <span class="text-xs opacity-80">Fideicomitente B</span>
-                            <span class="text-xl font-bold">83%</span>
+                            <span class="text-xs font-bold uppercase">Desarrollo (B)</span>
+                            <span class="text-xl font-extrabold">83%</span>
                         </div>
-                        <div class="w-full bg-white/40 h-2 rounded-full overflow-hidden">
-                            <div class="h-full rounded-full" style="width: 83%; background-color: var(--text-secondary);"></div>
+                        <div class="w-full bg-white/50 h-2 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full" style="width: 83%; background-color: var(--accent-dark);"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- General Conclusions -->
-        <div class="card p-8 mb-8" style="border-bottom: 8px solid var(--accent);">
-            <h2 class="text-2xl font-bold mb-8 text-center uppercase">Ruta de Acción Recomendada</h2>
+        <!-- Ruta de Acción -->
+        <div class="card p-8" style="border-bottom: 8px solid var(--accent);">
+            <h2 class="text-2xl font-bold mb-8 text-center uppercase" style="color: var(--brand-blue);">Ruta de Acción Recomendada</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                 <div class="flex gap-4">
-                    <span class="text-3xl font-bold" style="color: var(--accent-dark);">01</span>
-                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><strong>Ejercer Reversión:</strong> Ante incumplimientos de plazos, el Fideicomitente A puede recuperar el inmueble siguiendo el proceso contractual.</p>
+                    <span class="text-3xl font-extrabold" style="color: var(--accent);">01</span>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><strong>Reversión del Inmueble:</strong> Instruir la recuperación del patrimonio ante incumplimiento de hitos.</p>
                 </div>
                 <div class="flex gap-4">
-                    <span class="text-3xl font-bold" style="color: var(--accent-dark);">02</span>
-                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><strong>Conciliación de Gastos:</strong> Se requiere validar inversiones del Fideicomitente B para la liquidación final en caso de extinción.</p>
+                    <span class="text-3xl font-extrabold" style="color: var(--accent);">02</span>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><strong>Conciliación:</strong> Determinar gastos comprobables del Desarrollador para una salida justa.</p>
                 </div>
                 <div class="flex gap-4">
-                    <span class="text-3xl font-bold" style="color: var(--accent-dark);">03</span>
-                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><strong>Auditoría Financiera:</strong> Revisar disposiciones de la línea de crédito para confirmar el uso correcto de los recursos.</p>
+                    <span class="text-3xl font-extrabold" style="color: var(--accent);">03</span>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><strong>Auditoría:</strong> Confirmar ante Santander el saldo insoluto y el destino de los recursos.</p>
                 </div>
                 <div class="flex gap-4">
-                    <span class="text-3xl font-bold" style="color: var(--accent-dark);">04</span>
-                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><strong>Cierre Administrativo:</strong> Negociar con Banco Santander el levantamiento de gravámenes si se opta por recuperar la propiedad.</p>
+                    <span class="text-3xl font-extrabold" style="color: var(--accent);">04</span>
+                    <p class="text-sm leading-relaxed" style="color: var(--text-secondary);"><strong>Saneamiento:</strong> Resolver gravámenes simultáneamente para recuperar la propiedad libre.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Logo Card -->
-        <div class="card p-8 mb-12 flex justify-center items-center">
-            <img src="RPA_logo.png" alt="Logo Ricardo Ramírez Palos" class="max-h-24 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none;" class="text-2xl font-bold uppercase tracking-[0.3em] text-center" style="color: var(--text-main);">
-                RICARDO RAMÍREZ PALOS
-                <p class="text-xs tracking-normal font-light opacity-60">ABOGADOS</p>
+        <!-- Logo -->
+        <div class="mt-12 flex justify-center">
+            <div class="card p-8 w-full max-w-lg flex flex-col items-center">
+                <img src="RPA_logo.png" alt="Logo Ricardo Ramírez Palos" class="max-h-20 w-auto object-contain mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div style="display:none;" class="text-center">
+                    <div class="text-2xl font-bold uppercase tracking-widest">RICARDO RAMÍREZ PALOS</div>
+                    <div class="text-xs font-light opacity-60">ABOGADOS</div>
+                </div>
             </div>
         </div>
 
         <!-- Footer -->
-        <footer class="mt-12 text-center text-[10px] md:text-xs opacity-80 pb-12" style="color: var(--light-blue);">
-            <p class="mb-1 text-white">Elaborado por Ricardo Ramírez Palos | Referencia: Dictamen Avila Enero 2026</p>
-            <p>© Estructura Legal Inmobiliaria Zapopan</p>
+        <footer class="mt-12 text-center text-[10px] md:text-xs opacity-60 pb-12">
+            <p class="mb-1 font-bold uppercase tracking-widest text-white">Documento Confidencial | Fideicomiso Avila 2026</p>
+            <p style="color: var(--light-blue);">© 2026 Ramírez Palos & Asociados. Todos los derechos reservados.</p>
         </footer>
     </div>
 </body>
